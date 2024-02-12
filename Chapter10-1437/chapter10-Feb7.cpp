@@ -29,7 +29,7 @@ public:
     int doTouchThis = 91; 
 
 private: 
-    int c; 
+    int dontTouchThisVariable; 
 
 };
 
@@ -37,6 +37,9 @@ private:
 
 int main()
 {
+    SomeClass scObject; 
+    scObject.dontTouchThisVariable = 3; 
+
     SomeStruct someStructObject; 
 
     cout << someStructObject.a << "\t" << someStructObject.b << endl; 
