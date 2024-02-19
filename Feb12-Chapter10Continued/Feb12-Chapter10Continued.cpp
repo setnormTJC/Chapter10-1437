@@ -2,23 +2,29 @@
 #include <string>
 #include "Person.h"
 
-
-
 using namespace std;
-
 
 void doSomethingElse(); //function declaration 
 
 
+
 int main()
 {
-    Person p1; 
-    p1.setName("Johnny Law");
-    Person p2 = p1; 
-    p1.printAllMemberVars(); 
+
+    Person me; 
+    cout << "INITIALLY P1's member vars are: " << endl;
+    me.printAllMemberVars();
+    
+    me.setName("Seth");
+    me.makePersonOlder(10);
+    cout << "AFTER updating name and adding 10 to age: " << endl;
+
+
+    Person p2 = me; 
+    me.printAllMemberVars(); 
     p2.setName("Sarah Law");
 
-    p2.printAllMemberVars(); 
+    //p2.printAllMemberVars(); 
 
     //int a; //variable declaration -> "asks" the OS to make 4 Bytes of memory avaible
     //sqrt(42);

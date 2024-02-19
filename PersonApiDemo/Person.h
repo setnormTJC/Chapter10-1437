@@ -4,8 +4,8 @@
 
 #include<string>
 
-using std::cout; 
-using std::endl; 
+using std::cout;
+using std::endl;
 
 //#ifndef Person_H //an alternative to #pragma once that's fine
 
@@ -18,10 +18,10 @@ class Person
 	//member variables: 
 	std::string name = "asdfasdfasdf";
 	double income = 2345.06;
-	int age = 2345; 
+	int age = 2345;
 
 
-public: 
+public:
 	//member functions: 
 	//setters are sometimes called "mutator" 
 	void setName(std::string userSupplied_name); //function declaration
@@ -29,12 +29,11 @@ public:
 
 
 	Person(); //declares the existence of the default `Person` constructor
-	
+
 	//an overload of the constructor that takes params: 
 	Person(std::string asdfasd, int clientSupplied_Age, double client_income);
 
-	void printAllMemberVars();
 
-	void makePersonOlder(int howMuchOlder);
+	void printAllMemberVars();
 };
 
