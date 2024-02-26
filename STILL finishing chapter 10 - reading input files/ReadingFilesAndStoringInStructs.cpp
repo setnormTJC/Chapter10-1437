@@ -1,3 +1,4 @@
+#include "Point.h"
 #include <iostream>
 #include <vector>
 
@@ -12,9 +13,11 @@ struct Point
     int x1; 
     int y1; 
 
+
     //begin member functions: 
     Point(int x1, int y1)
-        :x1(x1), y1(y1) {}
+        :x1(x1), y1(y1) {} //"initializer list syntax" 
+
     void print()
     {
         cout << x1 << "\t" << y1 << endl; 
@@ -29,6 +32,17 @@ void printPoints(vector<Point>& points)
     {
         point.print(); 
     }
+}
+
+double calcAverageXValue(vector<Point>& points)
+{
+    double sum = 0; 
+    for (auto& point : points)
+    {
+        int x = point.x1; 
+        sum += x; 
+    }
+    return sum / points.size(); 
 }
 
 int main()
@@ -46,6 +60,7 @@ int main()
         return -123; 
     }
 
+    //getline(inputFile, line, ','); //ONE Option
     while (!inputFile.eof())
     {
         //let's just print the ENTIRE contents (commas and all) for now
@@ -54,12 +69,19 @@ int main()
         int y1; 
 
         inputFile >> x1 >> comma >> y1; 
-        cout << x1 << "\t" << comma << "\t" << y1 << endl; 
+        //cout << x1 << "\t" << comma << "\t" << y1 << endl; 
 
+        points.push_back(Point{ x1, y1 });
     }
+
+    printPoints(points); 
+    cout << "Average x value is: " << calcAverageXValue(points) << endl; 
+
     //while(getline()
         
-
+    //endline endl inline
+    // 
+    // 
     //inputFile >> points[i[]]
 
 
